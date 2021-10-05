@@ -1,0 +1,51 @@
+<div>
+<div class="main" fxLayoutAlign="center" >
+    <div class="mainBody" fxLayoutAlign="center ">
+        <form class="container" [formGroup]="loginForm" >
+            <mat-tab-group>
+                <mat-tab label="LOGIN"> 
+                    <mat-tab label="SIGNUP"> <app-sign-up></app-sign-up></mat-tab>
+  
+        <div class="section1" fxLayout="column" >
+            <mat-label>Email Id</mat-label>
+            
+          <mat-form-field appearance="outline" class="email id" style="width: 8cm;" >
+              
+              <input matInput formControlName="email" placeholder="Email id">
+              <mat-error>Email Id Required !</mat-error>
+          </mat-form-field>
+        </div>
+  
+      <div class="section3" fxLayout="column">
+        <mat-label>Password</mat-label>
+        <mat-form-field appearance="outline" class="password" style="width: 8cm;">
+           
+            <input matInput formControlName="password" placeholder="Password">
+            <mat-error>Password Required !</mat-error>
+        </mat-form-field>
+      </div>
+      <div>
+        <h5 class="text" style="padding-left: 4.9cm; margin-top: 0cm;">Forgot Password?</h5>
+    </div>
+   <!-- button -->
+    <div class="button">
+        <button type="submit" (click)="onSubmit()" class="button" mat-flat-button color="warn" style="width: 8cm;">Login</button>
+    </div>
+
+    <div fxLayoutAlign="center" >
+        <h3>OR</h3>
+    </div>
+
+    <div class="alternateButton"  fxLayoutGap="15px">
+        <button style="width: 3.8cm" mat-flat-button color="primary">facebook</button>
+        <button style="width: 3.8cm" mat-stroked-button>Google</button>
+    </div>
+</mat-tab>
+</mat-tab-group>
+</form> 
+
+  </div>
+  </div>
+  
+
+  
