@@ -1,44 +1,49 @@
-
-        <form class="container" [formGroup]="signupForm" >
+<mat-card class="body"  fxLayoutAlign="center center" >
+        <form class="container" [formGroup]="signupForm"  fxLayout="column" fxLayoutGap="5px" >
     
-            <div class="section1" fxLayout="column" >
+            <div class="section1">
+                <div class="fname">
                 <mat-label>Full Name</mat-label>
-                <mat-form-field appearance="outline" class="full_name" style="width: 8cm; "> 
+            </div>
+                <mat-form-field appearance="outline" class="full_name" > 
                     <input matInput formControlName="fullName" placeholder="Full name">
                     <mat-error>Full name Is Required !</mat-error>
                 </mat-form-field>    
             </div>
 
-            <div class="Section2" fxLayout="column" >
+            <div class="Section2"  >
+                <div class="emailhead">
                 <mat-label>Email id</mat-label>
-                <mat-form-field appearance="outline" class="email"  style="width: 8cm; ">
-                    
+            </div>
+                <mat-form-field appearance="outline" class="email"  >
                     <input matInput formControlName="email" placeholder="Email id">
-                  
                     <mat-error>Email Required</mat-error>
                 </mat-form-field>
             </div>
 
-            <div class="password" fxLayout="column" >
+            <div class="password"  >
+                <div class="pass">
                 <mat-label>Password</mat-label>
-                <mat-form-field appearance="outline" class="Password" style="width: 8cm; ">
-                   
-                    <input type="password" matInput formControlName="password" placeholder="Password">
+                </div>
+                <mat-form-field appearance="outline" class="password" >
+                   <input type="password" matInput formControlName="password" placeholder="Password">
                     <mat-error>Password required !</mat-error>
                 </mat-form-field>
             </div>
-            <div class="section4" fxLayout="column" >
+            <div class="section4"  >
+                <div class="mob">
                 <mat-label>Mobile Number</mat-label>
-                <mat-form-field appearance="outline" class="mobile" style="width: 8cm; ">
-                    
-                    <input  matInput formControlName="mobileNumber" placeholder="Mobile Number">
+            </div>
+                <mat-form-field appearance="outline" class="mobile" >
+                           <input  matInput formControlName="mobileNumber" placeholder="Mobile Number">
                     <mat-error>Mobile number required !</mat-error>
                 </mat-form-field>
-
             </div>
-           
+            <br>
+          
             <div class="button" >
-                <button type="submit" (click)="onSubmit()" class="button" mat-flat-button color="warn" style="width: 8cm;">Signup</button>
+                <button type="submit" (click)="onSubmit()" class="button" mat-flat-button color="warn">Signup</button>
             </div>            
     
         </form>    
+    </mat-card>

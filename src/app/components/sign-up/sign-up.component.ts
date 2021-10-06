@@ -10,6 +10,7 @@ import { MatSnackBar} from  '@angular/material/snack-bar';
 })
 export class SignUpComponent implements OnInit {
   signupForm!: FormGroup;
+  hide = true;
 
   constructor(private formBuilder: FormBuilder, private userService:UserService,private snackBar:MatSnackBar) { }
 

@@ -1,17 +1,45 @@
-/*.main {
-    padding: 1cm 0cm 1.5cm 0cm;
-    //   border:rgb(223, 226, 10) 2px solid;
+
+.body{
+    width: 389px;
+    height: 425px;
+  
+}
+
+.full_name{
+    width: 252px;
+    height: 35px;
+}
+
+.emailhead{
+    margin-top: 20px; 
+}
+.email{
+   
+    width: 252px;
+    height: 35px;
+}
+
+.pass{
+    margin-top: 20px;
 
 }
 
-.mainBody {
-    padding: 1cm 0cm 1cm 0cm;
-    border: rgba(128, 128, 128, 0.699) 0.1px solid;
-    border-radius: 10px;
-}*/
-
-.container {
-    padding: 0cm;
-    //  border:rgb(223, 226, 10) 2px solid;
-
+.password{
+    width: 252px;
+    height: 35px;
 }
+
+.mob{
+    margin-top: 65px;
+}
+
+.mobile{
+    width: 252px;
+    height: 35px;
+}
+
+.button{
+    width: 252px;
+    height: 37px;
+}
+

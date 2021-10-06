@@ -16,14 +16,18 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTabsModule} from '@angular/material/tabs';
 import { MatButtonModule } from '@angular/material/button';
-import {MatIconModule} from '@angular/material/Icon';
-
+import {MatIconModule} from '@angular/material/icon';
+import { DisplayLoginComponent } from './components/display-login/display-login.component';
+import {MatCardModule} from '@angular/material/card';
+import {MatDividerModule} from '@angular/material/divider';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    SignUpComponent
+    SignUpComponent,
+    DisplayLoginComponent,
+  
   ],
   imports: [
     BrowserModule,
@@ -40,7 +44,9 @@ import {MatIconModule} from '@angular/material/Icon';
     BrowserAnimationsModule,
     MatTabsModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatCardModule,
+    MatDividerModule
     
     
   ],
