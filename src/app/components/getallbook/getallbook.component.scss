@@ -1,0 +1,98 @@
+.main {
+    display: inline-grid;
+    padding: 20px;
+  }
+  .item1 {
+    margin-bottom: 40px;
+    max-width: 275px;
+    height: 450px;
+    width: auto;
+    display: grid;
+    border: 0.5px solid rgba(0, 0, 0, 0.24);
+  }
+  mat-card-title {
+    white-space: nowrap;
+    width: 235px;
+    height: 15%;
+    
+    text-overflow: ellipsis;
+  }
+  img {
+    display: flex;
+    
+    width: 100px;
+    height: 130px;
+    margin-top: 10px;
+    padding: 2px;
+    margin-bottom: 0;
+    margin-left: 30%;
+  }
+  .mat-card-image:first-child {
+    margin-top: 0;
+  }
+  .bookhead {
+    background-color: gray(128, 128, 128, 0.534);
+  }
+  .mat-card {
+    height: 370px;
+    padding-bottom: 20px;
+    padding: 0;
+  }
+  .details {
+    padding: 10px;
+    margin-top: -20px;
+  }
+  mat-card-content {
+    padding: 16px;
+  }
+  .toolbar {
+    flex: 1 1 auto;
+  }
+  @media screen and (min-width: 992px) {
+    .mainbody {
+      margin-left: 10%;
+      margin-right: 10%;
+      margin-bottom: 5%;
+    }
+  }
+  .title {
+    padding-top: -10px;
+    font-size: 15px;
+  }
+  
+  .card{
+      width:240px;
+      padding: 10px;
+      margin: 10px;
+      
+  }
+
+
+  .container{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin: 30px;
+  }
+  .add{
+    background-color: #8f2b2f;
+    width: 100px;
+   height:40px;
+  }
+  .addwish{
+    display: flex;
+    margin-top:-30px;
+    justify-content: space-around;
+  }
+
+  .wish{
+    background-color:whitesmoke;
+    width: 100px;
+    height:40px;
+  }
+
+.starbtn{
+  color:whitesmoke;
+  background-color: green;
+}  
+

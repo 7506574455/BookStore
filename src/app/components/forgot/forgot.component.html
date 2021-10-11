@@ -1,0 +1,39 @@
+<mat-toolbar class="toolbar" style="background-color: #A03037;">
+   
+    <button mat-icon-button class="example-icon" aria-label="">
+        <img class = "img"  src = "../../../assets/dashboard/education.svg">
+    </button>
+    <span class="book" style="color: whitesmoke">Bookstore</span>
+    
+</mat-toolbar>
+<form [formGroup]="passwordForm">
+    <div class="forgot" fxLayoutAlign="center center">
+        
+        Forgot Your Password
+    </div>
+
+    <div class="card" fxLayoutAlign="center">
+    <mat-card  fxLayout="column">
+          <h1 class="heading">Enter your email address and we'll send you<br> a link to reset your password</h1>
+ 
+          <div class="section1"  >
+            <div>
+            <mat-label>Email Id</mat-label> 
+            </div> 
+          <mat-form-field appearance="outline" class="email id" style="width: 252px;" >    
+              <input matInput formControlName="email" placeholder="Email id">
+              <mat-error>Email Id Required !</mat-error>
+          </mat-form-field>
+        </div>
+          
+        <div class="button">
+            <button type="submit"  class="button" mat-flat-button color="warn" style="width: 252px;">Reset Password</button>
+        </div>
+        <br>
+        <div fxLayoutAlign="center ">
+         <button mat-icon-button routerLink="/display-login" >   Create account</button>
+        </div>
+    </mat-card>
+
+</div>
+</form>

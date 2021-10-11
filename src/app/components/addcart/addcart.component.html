@@ -1,0 +1,161 @@
+<app-header class="header" ></app-header>
+<div class="body">
+    <div class="section1" fxLayout="row">
+           <div  class="home" routerLink="/bookdashboard">Home</div><span>/My cart</span>
+        </div>
+        <mat-card class="contentpart">
+            <div class="carthead" fxLayout="row"  fxLayoutAlign="space-between end" 
+             style="margin-bottom: 8px;">
+                <div style="margin-bottom: 30px;" >
+                    <b>My Cart<span>({{cartsArray?.length}})</span></b></div>
+                <div class="location">
+                    <mat-expansion-panel class="panel" (opened)="panelOpenState = true" 
+                    (closed)="panelOpenState = false" >
+                        <mat-expansion-panel-header>
+                            <mat-panel-title >
+                                    <img src="../../../assets/cart/location_on_black_24dp.svg">       
+                            </mat-panel-title>
+                            <mat-panel-description style="font-size: 14px;" >
+                              BridgeLabz Solutions LLP.....{{panelOpenState ? '' : ''}}
+                            </mat-panel-description>
+                        </mat-expansion-panel-header>
+                        <p>Banglore</p>
+                        <p>Mumbai</p>
+                        <p>Pune</p>
+                    </mat-expansion-panel> 
+              </div>   
+            </div>
+            <hr>
+            <div *ngFor="let cart of cartsArray">
+                <div fxLayout="row">
+                    <div class="book-image" style=" width: 123px;"> 
+                       <img src="../../../assets/dashboard/component (1).png" width="75px" height="95px">
+                    </div>       
+                    <div class="details">
+                        <h1 style="margin: 0%;">{{cart.product_id.description}}</h1>
+                        <h2>by {{cart.product_id.bookName}}</h2>
+                        <span fxLayoutAlign=" center">
+                            <h3 fxLayoutGap="7px" fxLayout="row"  >
+                             <b>Rs. {{cart.product_id.price}}</b><del>Rs. 3000</del>
+                            </h3>
+                           </span>
+                    </div>
+                    </div>
+                    <div class="addsub" >
+                        
+                        <div class="buttonpart" fxLayoutGap="5px" fxLayout="row">
+                            <button class="minus" >
+                                <img style=" font-size: 25px;" src="../../../assets/cart/remove_black_24dp.svg">
+                            </button>
+                            <div class="input">
+                                <input class="number" >
+                                </div>
+                                <button class="add"  >
+                                    <img style=" font-size: 25px;" src="../../../assets/cart/add_black_24dp (1).svg">
+                                </button>
+                                <div  class="remove" ><h6 class="removeCart" (click)="removeCartlist(cart)" style="font-size: 13px;">Remove</h6></div>
+                            </div>
+                      
+                            <div class="placebtn"fxLayoutAlign="end" >
+                            <button class="placeorderbtn" mat-raised-button 
+                            matTooltip="Place Order" style="background-color:#3371B5; color:#FFFFFF;">Place Order</button>
+                        </div>
+                    </div>
+                    <hr>
+                    </div>
+           </mat-card>                                         
+    </div>
+    <div>
+
+    </div>
+    
+    <div class="section2" [formGroup]="contactForm">
+    <mat-accordion class="example-headers-align">
+        <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Personal data
+            </mat-panel-title>
+            
+            
+          </mat-expansion-panel-header>
+      
+          <mat-form-field appearance="outline">
+            <mat-label>First Name</mat-label>
+            <input matInput formControlName="firstName" placeholder="Firstname" >
+            <mat-error>First name Required !</mat-error>  
+          </mat-form-field>
+      
+          <mat-form-field appearance="outline">
+            <mat-label>Mobile Number</mat-label>
+            <input matInput type="mobileNumber" min="1" formControlName="number" placeholder="MobileNumber" >
+            <mat-error>Number Required !</mat-error>  
+          </mat-form-field>
+          <br>
+          <mat-form-field appearance="outline" style="width:11cm;">
+            <mat-label>Address</mat-label>
+            <input  matInput formControlName="address" placeholder="Address" >
+            <mat-error>Address Required !</mat-error>  
+          </mat-form-field>
+          <br>
+          <mat-form-field appearance="outline">
+            <mat-label>City/town</mat-label>
+            <input matInput formControlName="city" placeholder="City">
+            <mat-error>City/town Required !</mat-error>  
+          </mat-form-field>
+        
+          <mat-form-field appearance="outline">
+            <mat-label>State</mat-label>
+            <input matInput formControlName="state" placeholder="State">
+            <mat-error>State Required !</mat-error>  
+          </mat-form-field>
+             
+          
+          <br>
+          <mat-radio-group aria-label="Select an option">
+            <mat-label>Type</mat-label>
+            <br>
+            <mat-radio-button value="1">Home</mat-radio-button>
+            <mat-radio-button value="2">Work</mat-radio-button>
+            <mat-radio-button value="2">Other</mat-radio-button>
+          </mat-radio-group>
+          <mat-action-row>
+            <button mat-raised-button color="primary" style="background-color:#3371B5; color:#FFFFFF;" (click)="nextStep()">Continue</button>
+          </mat-action-row>
+        </mat-expansion-panel>
+      
+        <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Order Summary
+            </mat-panel-title>
+           
+          </mat-expansion-panel-header>
+          
+         
+          <ng-container *ngFor="let cart of cartsArray">
+            <div   fxLayoutAlign="row">
+                <img src="../../../assets/dashboard/component (1).png" width="75px" height="95px">
+                <div class="details"  style="padding-left: 90px;">
+                    <h1  style="margin: 0%;">{{cart.product_id.description}}</h1>
+                    <h2 >by {{cart.product_id.author}}</h2>
+                    <h6 fxLayoutGap="8px" fxLayout="row" style="font-size: 13px;" >
+                        <b>Rs. {{cart.product_id.price}}</b><del>Rs. 3000</del>
+                    </h6>
+                </div>
+            </div>
+            <mat-divider></mat-divider>
+        </ng-container>
+          <mat-action-row>
+          
+            <button mat-raised-button color="primary" (click)="nextStep()" 
+            style="background-color:#3371B5; color:#FFFFFF;">Checkout</button>
+          </mat-action-row>
+        </mat-expansion-panel>    
+      
+      </mat-accordion>
+    </div>
+    <div>
+    <app-footer class="footer" ></app-footer>
+   
+</div>

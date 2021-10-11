@@ -6,6 +6,8 @@ import { environment } from '../../environments/environment';
   providedIn: 'root'
 })
 export class HttpService {
+ 
+  
   BaseUrl = environment.BaseUrl
   token:any
 
@@ -17,4 +19,17 @@ export class HttpService {
      return this.http.post(url,payload,tokenRequired && httpOption);
  
    }
+
+    getService( url: string= '' , tokenRequired:boolean=false, httpOption:any){
+
+   return this.http.get(url,tokenRequired && httpOption);
+
+  }
+   deleteService(url:string= '', payload: any,  tokenRequired:boolean=false, httpOption:any) {
+     
+     return this.http.delete(url, tokenRequired && httpOption)
+   }
+
+
+   
 }

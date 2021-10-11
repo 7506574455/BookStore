@@ -34,5 +34,7 @@ export class UserService {
       console.log(requestdata);
       return this.httpService.PostService(this.BaseUrl+'/bookstore_user/registration',requestdata,false,httpAuthOptions)
     }
+
+    
   
 }

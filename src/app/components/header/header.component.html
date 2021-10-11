@@ -1,0 +1,43 @@
+
+<div class="body">
+  
+    <mat-toolbar style="background:#A03037" fxLayout="row" fxLayoutAlign="space-around center">
+      
+            <div fxLayout="row" fxLayoutGap="10px">    
+                <img src='../../../assets/dashboard/education.svg' class="booklogo">
+                <span><h1 style="color:#FFFFFF">Bookstore</h1></span> 
+            </div>
+            
+            <div class="searchIcon">
+                <button mat-icon-button class="search-icon">
+                    <img class = "searchimg"  src = "../../../assets/dashboard/search_black_24dp.svg">
+                </button>
+                <input class="searchInput" placeholder="search">
+            </div>
+            
+            <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="35px">
+                
+                      <button mat-stroked-button style=" border:none; color:#FFFFFF;" fxLayout="column" fxLayoutAlign="center center">
+                    <img  [matMenuTriggerFor] = "menu" class = "headerbtn" src='../../../assets/dashboard/person_white_24dp.svg' class="image">
+                    <mat-menu class = "profile" #menu = "matMenu" xPosition = "after">
+                        <div class = "profileMenu" fxLayoutAlign="center center" fxLayout="column">
+                            <h5 style = "cursor: pointer" >Profile</h5>
+                            <h5 >My Orders</h5>
+                            <h5 style = "cursor: pointer" >My Wishlist</h5>
+                        </div>
+                        <button  fxLayoutAlign="center center" class = "button" mat-stroked-button>
+                            Log Out
+                        </button>
+                    </mat-menu>
+                    <div style="color:#FFFFFF">Profile</div>
+                </button>
+
+                <button mat-stroked-button style=" border:none; color:#FFFFFF;" fxLayout="column" fxLayoutAlign="center center">
+                    <img routerLink="/wishlist" src='../../../assets/dashboard/shopping_cart_white_24dp.svg'  class="image">
+                    <div style="color:#FFFFFF">Cart</div>
+                </button>
+            </div>          
+
+    </mat-toolbar>
+
+</div>

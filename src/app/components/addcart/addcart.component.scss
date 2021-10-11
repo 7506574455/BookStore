@@ -1,0 +1,82 @@
+.body{
+    box-sizing: border-box ;
+}
+
+.contentpart{
+    margin-left: 187px;
+    margin-right: 415px;   
+}
+
+.carthead{
+    margin-bottom: 30px;
+}
+
+
+.section1{
+    margin-left: 90px;
+    margin-top: 20px ;
+    margin-bottom: 20px;
+}
+
+.removeCart{
+    cursor: pointer;
+    margin:5px 0px 0px 14px;
+}
+
+.details{
+    font-size: 10px;
+    
+}
+
+.placebtn{
+    margin-bottom: 30px;
+}
+
+.home{
+    cursor: pointer;
+}
+
+.number{
+    width: 35px;
+     height: 25px;
+      background-color: white;
+}
+
+.minus{
+    width: 30px;
+     height: 30px;
+}
+
+.add{
+    width: 30px;
+     height: 30px;
+}
+
+.buttonpart{
+    padding-left: 120px;
+}
+
+.example-headers-align .mat-expansion-panel-header-title,
+.example-headers-align .mat-expansion-panel-header-description {
+  flex-basis: 0;
+}
+
+.example-headers-align .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.example-headers-align .mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}
+
+.section2{
+    
+        margin-left: 187px;
+        margin-right: 415px;   
+    
+}
+
+.mat-radio-button ~ .mat-radio-button {
+    margin-left: 16px;
+  }

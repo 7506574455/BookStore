@@ -39,6 +39,9 @@ onSubmit() {
   
   this.userService.loginUser(req).subscribe((response: any) =>{
     console.log(response);
+    localStorage.setItem('token',response.result.accessToken)
+   
+    this.router.navigateByUrl('/bookdashboard')
     
 
     this.snackBar.open("Login successfully ", ' ', {

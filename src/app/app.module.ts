@@ -20,13 +20,35 @@ import {MatIconModule} from '@angular/material/icon';
 import { DisplayLoginComponent } from './components/display-login/display-login.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatDividerModule} from '@angular/material/divider';
-
+import {AuthguardServiceService} from './services/authguard-service.service'
+import {MatMenuModule} from '@angular/material/menu';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatExpansionModule} from '@angular/material/expansion';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { ForgotComponent } from './components/forgot/forgot.component';
+import { GetallbookComponent } from './components/getallbook/getallbook.component';
+import { BookdashboardComponent } from './components/bookdashboard/bookdashboard.component';
+import { WishlistComponent } from './components/wishlist/wishlist.component';
+import { AddcartComponent } from './components/addcart/addcart.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatRadioModule} from '@angular/material/radio';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     SignUpComponent,
     DisplayLoginComponent,
+    HeaderComponent,
+    FooterComponent,
+    ForgotComponent,
+    GetallbookComponent,
+    BookdashboardComponent,
+    WishlistComponent,
+    AddcartComponent,
+    
   
   ],
   imports: [
@@ -35,7 +57,7 @@ import {MatDividerModule} from '@angular/material/divider';
     MatFormFieldModule,
     MatCheckboxModule,
     MatInputModule,
-   
+    MatMenuModule,
     FormsModule, 
     ReactiveFormsModule,
     FlexLayoutModule,
@@ -46,11 +68,20 @@ import {MatDividerModule} from '@angular/material/divider';
     MatIconModule,
     MatButtonModule,
     MatCardModule,
-    MatDividerModule
+    MatDividerModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatTooltipModule,
+    MatExpansionModule,
+    MatDialogModule,
+    MatRadioModule
     
     
   ],
-  providers: [],
+  providers: [
+    AuthguardServiceService
+  ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }
