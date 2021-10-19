@@ -21,19 +21,19 @@
                     <img  [matMenuTriggerFor] = "menu" class = "headerbtn" src='../../../assets/dashboard/person_white_24dp.svg' class="image">
                     <mat-menu class = "profile" #menu = "matMenu" xPosition = "after">
                         <div class = "profileMenu" fxLayoutAlign="center center" fxLayout="column">
-                            <h5 style = "cursor: pointer" >Profile</h5>
-                            <h5 >My Orders</h5>
-                            <h5 style = "cursor: pointer" >My Wishlist</h5>
+                            <h5 style = "cursor: pointer" >Welcome</h5>
+                            
+                            <button type="submit"  class="innerpart" mat-flat-button routerLink="/display-login">LOGIN/SIGNUP</button>
+                            <h5 style = "cursor: pointer" routerLink="/addcart" >My Orders</h5>
+                            <h5 style = "cursor: pointer" routerLink="/wishlist" >My Wishlist</h5>
                         </div>
-                        <button  fxLayoutAlign="center center" class = "button" mat-stroked-button>
-                            Log Out
-                        </button>
+                        
                     </mat-menu>
                     <div style="color:#FFFFFF">Profile</div>
                 </button>
 
                 <button mat-stroked-button style=" border:none; color:#FFFFFF;" fxLayout="column" fxLayoutAlign="center center">
-                    <img routerLink="/wishlist" src='../../../assets/dashboard/shopping_cart_white_24dp.svg'  class="image">
+                    <img routerLink="/addcart" src='../../../assets/dashboard/shopping_cart_white_24dp.svg'  class="image">
                     <div style="color:#FFFFFF">Cart</div>
                 </button>
             </div>          

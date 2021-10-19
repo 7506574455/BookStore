@@ -10,7 +10,7 @@ export class GetallbookComponent implements OnInit {
   booksArray:any
   token: any
   panelOpenState = false;
-   
+  books: Array<any> =[]; 
   constructor(private bookService:BookService) { }
   
   
@@ -18,6 +18,8 @@ export class GetallbookComponent implements OnInit {
     this.getAllBooks();
  
   }
+
+  
     
   
   getAllBooks(){

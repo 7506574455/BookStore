@@ -1,0 +1,46 @@
+<div class="body" fxLayoutAlign="center" >
+    <mat-card class="main" fxLayoutAlign="center center" >
+    
+      <form  [formGroup]="loginForm"  fxLayout="column" >
+  
+          <div class="section1"  >
+              <div>
+              <mat-label>Email Id</mat-label> 
+              </div> 
+            <mat-form-field appearance="outline" class="email id" style="width: 252px;" >    
+                <input matInput formControlName="email" placeholder="Email id">
+                <mat-error>Email Id Required !</mat-error>
+            </mat-form-field>
+          </div>
+  
+          <div class="section3" >
+              <div>
+              <mat-label>Password</mat-label>
+              </div>
+              <mat-form-field appearance="outline" class="password" style="width: 252px;">      
+                  <input matInput formControlName="password" placeholder="Password">
+                  <mat-error>Password Required !</mat-error>       
+              </mat-form-field>    
+            </div>
+  <br>
+          <div class="fPassword" fxLayoutAlign="end end" style="font-size: 9px;">
+          <h2 class="fhead" mat-icon-button routerLink="/forgot" >Forget Password?</h2>
+          </div>
+      
+      <div class="button">
+          <button type="submit" (click)="onSubmit()" class="button" mat-flat-button color="warn" style="width: 252px;">Login</button>
+      </div>
+      <div  >
+          <h3 fxLayoutAlign="center">OR</h3>
+      </div>
+  
+      <div class="button"  fxLayoutGap="10px">
+          <button class="fbutton" mat-flat-button color="primary">facebook</button>
+          <button class="gbutton" mat-stroked-button>Google</button>
+      </div>
+      </form>
+  
+  </mat-card>
+  </div>
+
+

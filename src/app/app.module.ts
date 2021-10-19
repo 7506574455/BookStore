@@ -35,6 +35,14 @@ import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { AddcartComponent } from './components/addcart/addcart.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatRadioModule} from '@angular/material/radio';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { OrderplacedComponent } from './components/orderplaced/orderplaced.component';
+import { AdminloginComponent } from './components/adminlogin/adminlogin.component';
+import { BookpageComponent } from './components/bookpage/bookpage.component';
+import { StarComponent } from './components/star/star.component';
+import { AdminsignupComponent } from './components/adminsignup/adminsignup.component';
+import { AdminDisplayComponent } from './components/admin-display/admin-display.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,6 +56,12 @@ import {MatRadioModule} from '@angular/material/radio';
     BookdashboardComponent,
     WishlistComponent,
     AddcartComponent,
+    OrderplacedComponent,
+    AdminloginComponent,
+    BookpageComponent,
+    StarComponent,
+    AdminsignupComponent,
+    AdminDisplayComponent,
     
   
   ],
@@ -74,7 +88,8 @@ import {MatRadioModule} from '@angular/material/radio';
     MatTooltipModule,
     MatExpansionModule,
     MatDialogModule,
-    MatRadioModule
+    MatRadioModule,
+    MatPaginatorModule
     
     
   ],

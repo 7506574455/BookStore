@@ -1,0 +1,52 @@
+
+<div class="fullbody" fxLayoutAlign="center">
+    <mat-card class="body"  fxLayoutAlign="center center" >
+            <form class="container" [formGroup]="signupForm"  fxLayout="column" fxLayoutGap="5px" >
+        
+                <div class="section1">
+                    <div class="fname">
+                    <mat-label>Full Name</mat-label>
+                </div>
+                    <mat-form-field appearance="outline" class="full_name" > 
+                        <input matInput formControlName="fullName" placeholder="Full name">
+                        <mat-error>Full name Is Required !</mat-error>
+                    </mat-form-field>    
+                </div>
+    
+                <div class="Section2"  >
+                    <div class="emailhead">
+                    <mat-label>Email id</mat-label>
+                </div>
+                    <mat-form-field appearance="outline" class="email"  >
+                        <input matInput formControlName="email" placeholder="Email id">
+                        <mat-error>Email Required</mat-error>
+                    </mat-form-field>
+                </div>
+    
+                <div class="password"  >
+                    <div class="pass">
+                    <mat-label>Password</mat-label>
+                    </div>
+                    <mat-form-field appearance="outline" class="password" >
+                       <input type="password" matInput formControlName="password" placeholder="Password">
+                        <mat-error>Password required !</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="section4"  >
+                    <div class="mob">
+                    <mat-label>Mobile Number</mat-label>
+                </div>
+                    <mat-form-field appearance="outline" class="mobile" >
+                               <input  matInput formControlName="mobileNumber" placeholder="Mobile Number">
+                        <mat-error>Mobile number required !</mat-error>
+                    </mat-form-field>
+                </div>
+                <br>
+              
+                <div class="button" >
+                    <button type="submit" (click)="onSubmit()" class="button" mat-flat-button color="warn">Signup</button>
+                </div>            
+        
+            </form>    
+        </mat-card>
+    </div>

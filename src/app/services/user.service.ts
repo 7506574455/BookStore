@@ -35,6 +35,28 @@ export class UserService {
       return this.httpService.PostService(this.BaseUrl+'/bookstore_user/registration',requestdata,false,httpAuthOptions)
     }
 
+    loginadmin(requestdata:any){
+      let httpAuthOptions = {
+        headers: new Headers({
+          'Content-Type': 'application/json',
+         'Authorization': this.token
+        })
+      };
+      console.log(requestdata);
+      return this.httpService.PostService(this.BaseUrl+'/bookstore_user/admin/login',requestdata,false,httpAuthOptions)
+    }
+
+    signupadmin(requestdata:any){
+      let httpAuthOptions = {
+        headers: new Headers({
+          'Content-Type': 'application/json',
+         'Authorization': this.token
+        })
+      };
+      console.log(requestdata);
+      return this.httpService.PostService(this.BaseUrl+'/bookstore_user/admin/registration',requestdata,false,httpAuthOptions)
+    }
+
     
   
 }

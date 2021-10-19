@@ -30,6 +30,13 @@ export class HttpService {
      return this.http.delete(url, tokenRequired && httpOption)
    }
 
+   putService(url:string= '', payload: any,  tokenRequired:boolean=false, httpOption:any) {
+     
+    return this.http.put(url,payload, tokenRequired && httpOption)
+  }
+
+
+
 
    
 }

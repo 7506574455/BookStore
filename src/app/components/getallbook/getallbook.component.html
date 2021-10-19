@@ -1,10 +1,23 @@
-
+<div class="main">
+    <div class="middleHead" fxLayout="row">
+        <div class="bookTxt" >
+            Books 
+           
+        </div>
+        <!-- <div class="sort" >
+            <button  mat-stroked-button [matMenuTriggerFor]="menu">Sort by relevance</button>
+                <mat-menu #menu="matMenu">
+                   
+                </mat-menu>
+        </div> -->
+    </div>
+    </div>
         
         <div class="container" fxLayout="row wrap" fxLayoutGap="60px">
             <mat-card *ngFor="let book of booksArray" class="item1">
                 <mat-card-content class="bookhead" >
                    
-                    <img fxLayout="center center" src="../../../assets/dashboard/component (1).png">
+                    <img fxLayout="center center" routerLink="/bookpage" src="../../../assets/dashboard/component (1).png">
                 </mat-card-content>
 
 
@@ -27,8 +40,12 @@
 
                 <div class="addwish">
                     <button class="add" (click)="cart(book)" mat-raised-button routerLink="/addcart">add to bag</button>
-                    <button class="wish" (click)="wishlist(book)" mat-raised-button  routerLink="/wishlist">wishlist</button>
+                    <button class="wish" (click)="wishlist(book)" mat-raised-button  routerLink="/wishlist" >wishlist</button>
                 </div> 
             </mat-card>
         
         </div>
+        <mat-paginator [length]="22"
+[pageSize]="8"
+aria-label="Select page">
+</mat-paginator>

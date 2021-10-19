@@ -98,7 +98,28 @@ export class BookService {
    }
   
   
+   addressDetailsService(data:any) {
+    this.token = localStorage.getItem('token');
+    let httpAuthOptions = {
+      headers: new HttpHeaders({
+        'x-access-token': this.token,
+        'Content-Type': 'application/json'
+      })
+    }
+    return this.httpService.putService(this.BaseUrl+'/bookstore_user/edit_user',data,true, httpAuthOptions);
+  }
 
+  orderService(data:any) {
+    this.token = localStorage.getItem('token');
+    let httpAuthOptions = {
+      headers: new HttpHeaders({
+        'x-access-token': this.token,
+        'Content-Type': 'application/json'
+      })
+    }
+    return this.httpService.PostService(this.BaseUrl+'/bookstore_user/add/order',data,true, httpAuthOptions);
+  }
+ 
  
   
 }

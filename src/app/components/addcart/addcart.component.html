@@ -45,20 +45,20 @@
                         
                         <div class="buttonpart" fxLayoutGap="5px" fxLayout="row">
                             <button class="minus" >
-                                <img style=" font-size: 25px;" src="../../../assets/cart/remove_black_24dp.svg">
+                                <img style=" font-size: 25px;" (click)="decrement()" src="../../../assets/cart/remove_black_24dp.svg">
                             </button>
                             <div class="input">
-                                <input class="number" >
+                                <input class="number" [value]="quantity" >
                                 </div>
                                 <button class="add"  >
-                                    <img style=" font-size: 25px;" src="../../../assets/cart/add_black_24dp (1).svg">
+                                    <img style=" font-size: 25px;" (click)="increment(cart)" src="../../../assets/cart/add_black_24dp (1).svg">
                                 </button>
                                 <div  class="remove" ><h6 class="removeCart" (click)="removeCartlist(cart)" style="font-size: 13px;">Remove</h6></div>
                             </div>
                       
                             <div class="placebtn"fxLayoutAlign="end" >
                             <button class="placeorderbtn" mat-raised-button 
-                            matTooltip="Place Order" style="background-color:#3371B5; color:#FFFFFF;">Place Order</button>
+                            style="background-color:#3371B5; color:#FFFFFF;"  *ngIf="displayButton"   (click)="addressToggles()">Place Order</button>
                         </div>
                     </div>
                     <hr>
@@ -68,94 +68,112 @@
     <div>
 
     </div>
+
+
+
+    <!--**********************addresspart********************************-->
+
     
-    <div class="section2" [formGroup]="contactForm">
-    <mat-accordion class="example-headers-align">
-        <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              Personal data
-            </mat-panel-title>
-            
-            
-          </mat-expansion-panel-header>
-      
-          <mat-form-field appearance="outline">
-            <mat-label>First Name</mat-label>
-            <input matInput formControlName="firstName" placeholder="Firstname" >
-            <mat-error>First name Required !</mat-error>  
-          </mat-form-field>
-      
-          <mat-form-field appearance="outline">
-            <mat-label>Mobile Number</mat-label>
-            <input matInput type="mobileNumber" min="1" formControlName="number" placeholder="MobileNumber" >
-            <mat-error>Number Required !</mat-error>  
-          </mat-form-field>
-          <br>
-          <mat-form-field appearance="outline" style="width:11cm;">
-            <mat-label>Address</mat-label>
-            <input  matInput formControlName="address" placeholder="Address" >
-            <mat-error>Address Required !</mat-error>  
-          </mat-form-field>
-          <br>
-          <mat-form-field appearance="outline">
-            <mat-label>City/town</mat-label>
-            <input matInput formControlName="city" placeholder="City">
-            <mat-error>City/town Required !</mat-error>  
-          </mat-form-field>
-        
-          <mat-form-field appearance="outline">
-            <mat-label>State</mat-label>
-            <input matInput formControlName="state" placeholder="State">
-            <mat-error>State Required !</mat-error>  
-          </mat-form-field>
-             
-          
-          <br>
-          <mat-radio-group aria-label="Select an option">
-            <mat-label>Type</mat-label>
-            <br>
-            <mat-radio-button value="1">Home</mat-radio-button>
-            <mat-radio-button value="2">Work</mat-radio-button>
-            <mat-radio-button value="2">Other</mat-radio-button>
-          </mat-radio-group>
-          <mat-action-row>
-            <button mat-raised-button color="primary" style="background-color:#3371B5; color:#FFFFFF;" (click)="nextStep()">Continue</button>
-          </mat-action-row>
-        </mat-expansion-panel>
-      
-        <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              Order Summary
-            </mat-panel-title>
-           
-          </mat-expansion-panel-header>
-          
-         
+    <div class="address" *ngIf="displayAddress">
+      <span>Address Details</span>
+  </div>
+
+  <form class="customDetails" *ngIf="!displayAddress"  [formGroup]="addressForm">
+      <div style=" width: 75%;">
+          <h2 class="details" style="font-size: 15px;">Customer Details</h2>
+          <div class="firstrow"  fxLayout="row" fxLayoutGap="5px">
+              <div class="fname"> 
+                  <h4 style="margin: 0px; " class="textName">Full Name</h4>
+                  <mat-form-field appearance="outline" class="placewidth" >
+                      <input  matInput placeholder="" formControlName="fullName" >
+                      <mat-error>Full name Required !</mat-error> 
+                  </mat-form-field>
+              </div>
+              <div class="phone">
+                  <h4 style="margin: 0px;" class="textName">Mobile Number</h4>
+                  <mat-form-field appearance="outline" class="placewidth">
+                      <input matInput placeholder="" formControlName="mobileNumber">
+                      <mat-error>Number Required !</mat-error> 
+                  </mat-form-field>
+              </div>
+          </div>
+          <div style="margin-top: 20px;">
+              <h4  style="margin: 0px;" class="textName">Address</h4>
+              <mat-form-field appearance="outline" class="addressWidth">
+                  <input matInput placeholder="" formControlName="fullAddress">
+                  <mat-error>Address Required !</mat-error> 
+              </mat-form-field>
+          </div>
+          <div class="add" fxLayout="row" fxLayoutGap="10px" style="margin-top: 30px;">
+              <div>
+                  <h4 style="margin: 0px;" class="textName">City/town</h4>
+                  <mat-form-field appearance="outline" class="placewidth">
+                      <input matInput placeholder="" formControlName="city">
+                      <mat-error>City/town Required !</mat-error> 
+                  </mat-form-field>
+              </div>
+              <div>
+                  <h4 style="margin: 0px;" class="textName">State</h4>
+                  <mat-form-field appearance="outline" class="placewidth">
+                      <input matInput placeholder="" formControlName="state">
+                      <mat-error>State Required !</mat-error>
+                  </mat-form-field>
+              </div>
+          </div>
+          <div>
+              <h4 style="margin-top: 60px;" class="textName">Type</h4>
+              <mat-radio-group formControlName="addressType">
+                  <mat-radio-button class="example-margin" value="Home">Home</mat-radio-button>
+                  <mat-radio-button class="example-margin" value="Office">Work</mat-radio-button>
+                  <mat-radio-button class="example-margin" value="Other">Other</mat-radio-button>
+              </mat-radio-group>
+          </div>
+      </div>
+      <div style="display: flex; flex-direction: column; justify-content: space-between;">
+          <div class="newAddress" *ngIf="displayContinueButton">
+              <span style="color: #A03037; padding: 20px 0px 20px 19px;">Add New Address</span>
+          </div>
+          <div>
+              <div class="continue"(click)="onSubmit()" (click) = "continue()" *ngIf="displayContinueButton">
+                  Continue
+              </div>
+          </div>
+      </div>
+      <div *ngIf="!displayContinueButton">
+
+      </div>
+  </form>
+
+  
+  <div class="address" *ngIf="displayCart">
+      <span>Order Summary</span>
+  </div>
+  <div class="cart card" *ngIf="!displayCart">            
+      <div>
           <ng-container *ngFor="let cart of cartsArray">
-            <div   fxLayoutAlign="row">
-                <img src="../../../assets/dashboard/component (1).png" width="75px" height="95px">
-                <div class="details"  style="padding-left: 90px;">
-                    <h1  style="margin: 0%;">{{cart.product_id.description}}</h1>
-                    <h2 >by {{cart.product_id.author}}</h2>
-                    <h6 fxLayoutGap="8px" fxLayout="row" style="font-size: 13px;" >
-                        <b>Rs. {{cart.product_id.price}}</b><del>Rs. 3000</del>
-                    </h6>
-                </div>
-            </div>
-            <mat-divider></mat-divider>
-        </ng-container>
-          <mat-action-row>
-          
-            <button mat-raised-button color="primary" (click)="nextStep()" 
-            style="background-color:#3371B5; color:#FFFFFF;">Checkout</button>
-          </mat-action-row>
-        </mat-expansion-panel>    
+              <div class="book"  fxLayout="row">
+                  <img src="../../../assets/dashboard/component (1).png">
+                  <div style="margin-left: 20px;">
+                      <h4 style="width: 300px; margin-bottom: 0;">{{cart.product_id.description}}</h4>
+                      <h5 style="margin-bottom: 5px; color: #9D9D9D;">by {{cart.product_id.author}}</h5>
+                      <span style="font: normal normal bold 15px/18px Lato;
+                     
+                      opacity: 1;">Rs. {{cart.product_id.price}}</span><del>Rs. 3000</del>
+                  </div>
+              </div>
+              <mat-divider></mat-divider>
+          </ng-container>
+      </div>
       
-      </mat-accordion>
-    </div>
-    <div>
-    <app-footer class="footer" ></app-footer>
-   
-</div>
+      <div class="checkoutOrder" fxLayoutAlign="end">
+          <button (click) = "checkout()" class="checkoutorder"  routerLink="/orderplaced"  >
+              CHECKOUT
+          </button>
+      </div>
+      
+  </div>
+<br>
+
+<app-footer></app-footer>
+
+  
