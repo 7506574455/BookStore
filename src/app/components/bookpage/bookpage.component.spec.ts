@@ -1,5 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import {HttpClientModule} from '@angular/common/http';
 import { BookpageComponent } from './bookpage.component';
 
 describe('BookpageComponent', () => {
@@ -8,7 +10,12 @@ describe('BookpageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BookpageComponent ]
+      declarations: [ BookpageComponent 
+      ],
+      imports:[HttpClientModule,
+        HttpClientTestingModule,
+        RouterTestingModule,
+      ]
     })
     .compileComponents();
   });
@@ -22,4 +29,10 @@ describe('BookpageComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('Should set get book data submitted to true',(() => {
+    component.getData();
+    expect(component.getData).toBeTruthy();
+
+ }));
 });

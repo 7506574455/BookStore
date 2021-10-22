@@ -19,21 +19,32 @@
                 
                       <button mat-stroked-button style=" border:none; color:#FFFFFF;" fxLayout="column" fxLayoutAlign="center center">
                     <img  [matMenuTriggerFor] = "menu" class = "headerbtn" src='../../../assets/dashboard/person_white_24dp.svg' class="image">
-                    <mat-menu class = "profile" #menu = "matMenu" xPosition = "after">
-                        <div class = "profileMenu" fxLayoutAlign="center center" fxLayout="column">
-                            <h5 style = "cursor: pointer" >Welcome</h5>
-                            
-                            <button type="submit"  class="innerpart" mat-flat-button routerLink="/display-login">LOGIN/SIGNUP</button>
-                            <h5 style = "cursor: pointer" routerLink="/addcart" >My Orders</h5>
-                            <h5 style = "cursor: pointer" routerLink="/wishlist" >My Wishlist</h5>
+                    <mat-menu #menu = "matMenu" style="margin-left: -50px;" >
+                        <div class="profilepart">
+                        <div class="profileheading">
+                            <h4 style="margin:2px;"><b>Welcome</b></h4>
+                            <p><small style="color: #878787;">To access account and manage orders</small></p>
+                            <button (click)="logout()" class="mainpart" mat-stroked-button>LOGIN/SIGNUP</button>
                         </div>
-                        
+                        <br>
+                        <mat-divider></mat-divider>
+                        <br>
+                        <div class="myOrderbtn" fxLayoutAlign="start center" fxLayoutGap="10px" style="margin-bottom: 10px;">
+                            <span class="myOrderbtn" style="color: #878787;" >My Orders</span>
+                        </div>
+                        <div class="wishlistbtn" fxLayoutAlign="start center" fxLayoutGap="10px">
+                            
+                            <span routerLink="/wishlist" class="myOrderbtn" style="color: #878787;">Wishlists</span>
+                        </div>
+                    </div>
                     </mat-menu>
+                  
                     <div style="color:#FFFFFF">Profile</div>
                 </button>
-
+               
                 <button mat-stroked-button style=" border:none; color:#FFFFFF;" fxLayout="column" fxLayoutAlign="center center">
-                    <img routerLink="/addcart" src='../../../assets/dashboard/shopping_cart_white_24dp.svg'  class="image">
+                    <img routerLink="/addcart" src='../../../assets/dashboard/shopping_cart_white_24dp.svg'  class="image"> 
+                      <mat-icon matBadge="1" matBadgeColor="warn"></mat-icon>
                     <div style="color:#FFFFFF">Cart</div>
                 </button>
             </div>          

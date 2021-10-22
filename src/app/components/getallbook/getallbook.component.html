@@ -1,15 +1,18 @@
 <div class="main">
     <div class="middleHead" fxLayout="row">
         <div class="bookTxt" >
-            Books 
-           
+            Books    
         </div>
-        <!-- <div class="sort" >
+         <div class="sort" >
             <button  mat-stroked-button [matMenuTriggerFor]="menu">Sort by relevance</button>
                 <mat-menu #menu="matMenu">
-                   
+                    
+                    <button mat-menu-item>Popular</button>
+                    <button mat-menu-item>Price: Low to High</button>
+                    <button mat-menu-item>Price: High to Low</button>
+                    <button mat-menu-item>Newest Arrivals</button>
                 </mat-menu>
-        </div> -->
+        </div> 
     </div>
     </div>
         
@@ -45,7 +48,7 @@
             </mat-card>
         
         </div>
-        <mat-paginator [length]="22"
-[pageSize]="8"
+        <mat-paginator fxLayoutAlign="center" [length]="22"
+[pageSize]="1"
 aria-label="Select page">
 </mat-paginator>

@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { FormGroup, ReactiveFormsModule, FormsModule, FormBuilder } from '@angular/forms';
 import { ForgotComponent } from './forgot.component';
 
 describe('ForgotComponent', () => {
@@ -8,7 +8,12 @@ describe('ForgotComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ForgotComponent ]
+      declarations: [ ForgotComponent 
+      ],
+      imports:[
+        FormsModule,
+        ReactiveFormsModule,
+      ]
     })
     .compileComponents();
   });

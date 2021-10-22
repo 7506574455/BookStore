@@ -120,6 +120,42 @@ export class BookService {
     return this.httpService.PostService(this.BaseUrl+'/bookstore_user/add/order',data,true, httpAuthOptions);
   }
  
+  getBookService(data:any) {
+    this.token = localStorage.getItem('token');
+    let httpAuthOptions = {
+      headers: new HttpHeaders({
+        'x-access-token': this.token,
+        'Content-Type': 'application/json'
+      })
+    }
+    return this.httpService.PostService(this.BaseUrl+'/bookstore_user/get/book',data,true, httpAuthOptions);
+  }
+
+  FeedbackService(review: any,data:any) {
+    this.token = localStorage.getItem('token');
+    let httpAuthOptions = {
+      headers: new HttpHeaders({
+        'x-access-token': this.token,
+        'Content-Type': 'application/json'
+      })
+    }
+    return this.httpService.PostService(this.BaseUrl+'/bookstore_user/add/feedback/'+data,review,true,httpAuthOptions);
+  }
+
+
+GetFeedbackService(id:any){
+
+    let httpAuthOptions = {
+      headers: new HttpHeaders({
+        'x-access-token': this.token,
+        'Content-Type': 'application/json'
+      })
+    }
+    console.log(httpAuthOptions); 
+    
+    return this.httpService.getService(this.BaseUrl+'/bookstore_user/get/feedback/'+id,true,httpAuthOptions);
+
+  }
  
   
 }

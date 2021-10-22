@@ -26,11 +26,16 @@
   
 }
 
-.innerpart{
-  border: solid red 1px;
-  font-size: 11px;
+.profilepart{
+  padding: 15px;
 }
+.myOrderbtn:hover{
+  cursor: pointer;
+} 
   
+.mainpart{
+  border: 2px solid red;
+}
   
   .search-icon,
   .searchInput:focus {

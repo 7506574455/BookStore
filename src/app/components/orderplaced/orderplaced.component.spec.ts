@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { RouterTestingModule } from '@angular/router/testing';
 import { OrderplacedComponent } from './orderplaced.component';
 
 describe('OrderplacedComponent', () => {
@@ -8,7 +8,11 @@ describe('OrderplacedComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ OrderplacedComponent ]
+      declarations: [ OrderplacedComponent 
+      ],
+      imports:[
+        RouterTestingModule,
+      ]
     })
     .compileComponents();
   });
@@ -22,4 +26,6 @@ describe('OrderplacedComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  
 });

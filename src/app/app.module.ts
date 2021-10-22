@@ -36,6 +36,7 @@ import { AddcartComponent } from './components/addcart/addcart.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatBadgeModule} from '@angular/material/badge';
 import { OrderplacedComponent } from './components/orderplaced/orderplaced.component';
 import { AdminloginComponent } from './components/adminlogin/adminlogin.component';
 import { BookpageComponent } from './components/bookpage/bookpage.component';
@@ -89,7 +90,8 @@ import { AdminDisplayComponent } from './components/admin-display/admin-display.
     MatExpansionModule,
     MatDialogModule,
     MatRadioModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatBadgeModule
     
     
   ],

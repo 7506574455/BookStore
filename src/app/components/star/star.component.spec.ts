@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { RouterTestingModule } from '@angular/router/testing';
 import { StarComponent } from './star.component';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import { MatSnackBar,MatSnackBarModule} from  '@angular/material/snack-bar';
+import {HttpClientModule} from '@angular/common/http';
 
 describe('StarComponent', () => {
   let component: StarComponent;
@@ -8,7 +11,12 @@ describe('StarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ StarComponent ]
+      declarations: [ StarComponent ],
+      imports:[RouterTestingModule,
+        HttpClientModule,
+        HttpClientTestingModule,
+        MatSnackBarModule,
+      ]
     })
     .compileComponents();
   });

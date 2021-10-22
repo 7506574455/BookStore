@@ -1,29 +1,36 @@
 import { Component,Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import {BookService} from '../../services/book.service';
-import {DataService} from '../../services/data.service';
+import {BookService} from 'src/app/services/book.service';
+import {DataService} from 'src/app/services/data.service';
 @Component({
   selector: 'app-bookpage',
   templateUrl: './bookpage.component.html',
   styleUrls: ['./bookpage.component.scss']
 })
 export class BookpageComponent implements OnInit {
-  @Input() books: any ;
-  data: any
-  token:any
-  cartsArray:any=[]
-  cart:any
+  token:any;
+  id:any;
+  bookdata:any
+  booksArray:any
+  
   constructor(private router: Router,private bookService:BookService,private dataService:DataService) { 
-     this.data = this.router.getCurrentNavigation()?.extras.state;
-     console.log(this.data)
+     this.bookdata = this.router.getCurrentNavigation()?.extras.state;
+     console.log(this.bookdata)
   }
 
   ngOnInit(): void {
-    
-    this.token = localStorage.getItem('token') 
+      
     this.getData()
   }
   getData = () => {
+    try{
+    this.bookdata= this.bookdata['details'];
+    localStorage.setItem("id",this.bookdata.id);
+    console.log(this.bookdata);
+    }
+    catch(Error:any){
+      console.log(Error.Message)
+    }
    //this.data=this.data['value']
    }
 
@@ -31,14 +38,14 @@ export class BookpageComponent implements OnInit {
     this.router.navigate(['bookdashboard']);
   }
 
-  addcart(data:any){
-    console.log("cart data",data);
-   this.bookService.addCartService(data).subscribe((response: any) => {
-     console.log(response);
-    },error =>{
-      console.log(error);
-      
-    })
   
+  
+  getBook(){
+    this.bookService.getallBookService().subscribe((response:any)=>{
+      console.log(response)
+      this.booksArray=response.result
+      console.log(this.booksArray)
+    }
+    )
   }
 }
